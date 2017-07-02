@@ -6,7 +6,7 @@
 
     <groupId>bnp-parser</groupId>
     <artifactId>bnp-parser</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <name>bnp-parser</name>
     <description>bnp-parser</description>
