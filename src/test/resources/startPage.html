@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-type">
+    <meta content="no-cache" http-equiv="Pragma">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <meta content="-1" http-equiv="Expires">
+    <link href="../static/css/s.css?v=1.5.8" rel="stylesheet" type="text/css">
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../static/css/smartPlanet-ie8.css?v=1.5.8"><![endif]-->
+    <title>Pl@net - Bank BGZ BNP Paribas S.A.</title>
+    <link href="../static/img/favicon.ico" rel="SHORTCUT ICON" type="image/x-icon">
+    <link href="../static/img/favicon.ico" rel="FAVORITE ICON" type="image/x-icon">
+    <script language="JavaScript" src="../static/js/swfobject.js?v=1.5.8" type="text/javascript">
+    </script>
+    <script language="Javascript1.1" type="text/javascript">
+        <!--
+        Begin
+        var bCancel = false;
+        function validateLoginAliasForm(form) {
+            if (bCancel) {
+                return true;
+            } else {
+                var formValidationResult;
+                formValidationResult = validateRequired(form);
+                formValidationResult = formValidationResult && validateMaxLength(form);
+                formValidationResult = formValidationResult && validateMask(form);
+                return (formValidationResult);
+            }
+        }
+        function LoginAliasForm_required() {
+            this.a0 = new Array("p_alias", "Proszę wpisać Identyfikator", new Function("varName", "this.maxlength='20'; this.mask=/^[a-zA-Z0-9_@]+$/;  return this[varName];"));
+        }
+        function LoginAliasForm_maxlength() {
+            this.a0 = new Array("p_alias", "Identyfikator nie może mieć więcej niż 25 znaków.", new Function("varName", "this.maxlength='25'; this.mask=/^[a-zA-Z0-9_@\\s]*$/;  return this[varName];"));
+        }
+        function LoginAliasForm_mask() {
+            this.a0 = new Array("p_alias", "Pole \'Identyfikator\' zawiera niedozwolone znaki.", new Function("varName", "this.maxlength='25'; this.mask=/^[a-zA-Z0-9_@\\s]*$/;  return this[varName];"));
+        }
+        function validateRequired(form) {
+            var isValid = true;
+            var focusField = null;
+            var i = 0;
+            var fields = new Array();
+            var formName = form.getAttributeNode("name");
+            oRequired = eval('new ' + formName.value + '_required()');
+            for (x in oRequired) {
+                var field = form[oRequired[x][0]];
+                if ((field.type == 'hidden' || field.type == 'text' || field.type == 'textarea' || field.type == 'file' || field.type == 'checkbox' || field.type == 'select-one' || field.type == 'password') && field.disabled == false) {
+                    var value = '';                    // get field's value                    if (field.type == "select-one") {                        var si = field.selectedIndex;                        if (si >= 0) {                            value = field.options[si].value;                        }                    } else if (field.type == 'checkbox') {                        if (field.checked) {                            value = field.value;                        }                    } else {                        value = field.value;                    }                    if (trim(value).length == 0) {                        if (i == 0) {                            focusField = field;                        }                        fields[i++] = oRequired[x][1];                        isValid = false;                    }                } else if (field.type == "select-multiple") {                     var numOptions = field.options.length;                    lastSelected=-1;                    for(loop=numOptions-1;loop>=0;loop--) {                        if(field.options[loop].selected) {                            lastSelected = loop;                            value = field.options[loop].value;                            break;                        }                    }                    if(lastSelected < 0 || trim(value).length == 0) {                        if(i == 0) {                            focusField = field;                        }                        fields[i++] = oRequired[x][1];                        isValid=false;                    }                } else if ((field.length > 0) && (field[0].type == 'radio' || field[0].type == 'checkbox')) {                    isChecked=-1;                    for (loop=0;loop < field.length;loop++) {                        if (field[loop].checked) {                            isChecked=loop;                            break; // only one needs to be checked                        }                    }                    if (isChecked < 0) {                        if (i == 0) {                            focusField = field[0];                        }                        fields[i++] = oRequired[x][1];                        isValid=false;                    }                }            }            if (fields.length > 0) {               focusField.focus();               alert(fields.join('\n'));            }            return isValid;        }        function validateMaxLength(form) {            var isValid = true;            var focusField = null;            var i = 0;            var fields = new Array();            var formName = form.getAttributeNode("name");             oMaxLength = eval('new ' + formName.value + '_maxlength()');                    for (x in oMaxLength) {                var field = form[oMaxLength[x][0]];                if ((field.type == 'hidden' ||                    field.type == 'text' ||                    field.type == 'password' ||                    field.type == 'textarea') &&                    field.disabled == false) {                    var iMax = parseInt(oMaxLength[x][2]("maxlength"));                    if (field.value.length > iMax) {                        if (i == 0) {                            focusField = field;                        }                        fields[i++] = oMaxLength[x][1];                        isValid = false;                    }                }            }            if (fields.length > 0) {               focusField.focus();               alert(fields.join('\n'));            }            return isValid;        }        function validateMask(form) {            var isValid = true;            var focusField = null;            var i = 0;            var fields = new Array();            var formName = form.getAttributeNode("name");             oMasked = eval('new ' + formName.value + '_mask()');                  for (x in oMasked) {                var field = form[oMasked[x][0]];                if ((field.type == 'hidden' ||                    field.type == 'text' ||                     field.type == 'textarea' ||                     field.type == 'file') &&                     (field.value.length > 0) &&                     field.disabled == false) {                    if (!matchPattern(field.value, oMasked[x][2]("mask"))) {                        if (i == 0) {                            focusField = field;                        }                        fields[i++] = oMasked[x][1];                        isValid = false;                    }                }            }            if (fields.length > 0) {               focusField.focus();               alert(fields.join('\n'));            }            return isValid;        }        function matchPattern(value, mask) {           return mask.exec(value);        }        function trim(s) {            return s.replace( /^\s*/, "" ).replace( /\s*$/, "" );        }    //End -->
+    </script>
+    <script language="JavaScript" type="text/javascript">
+        function init() {
+        }
+        function submitForm(form1) {
+            form1.p_alias.value = form1.p_alias.value.replace(/\s/g, "");
+            return validateLoginAliasForm(form1);
+        }
+    </script>
+    <script language="JavaScript1.2" src="../static/js/wreport.js?v=1.5.8" type="text/javascript">
+    </script>
+</head>
+<body onload="init()">
+<div id="container">
+    <div id="header">
+        <div id="h-top-bar">
+            <form action="/login/Redirect" id="LangSelectForm" method="post" name="LangSelectForm">
+                <input name="sid" type="hidden" value="I020023YMk5KrpDs7QXhzmEQ47UsEDcMBRccHiKe">
+                <input name="flow_id" type="hidden" value="entry-5324dgL33qzcH4I3oQjALb">
+                <input name="state_id" type="hidden" value="LOGIN">
+                <input name="action_token" type="hidden" value="JBxykBHVq8CDfZbbgivvl">
+                <input name="action" type="hidden" value="lang">
+                <input name="p_lang" type="hidden" value="">
+            </form>
+            <div class="rightPart">
+                <ul>
+                    <li>
+                        <a href="http://www.bgzbnpparibas.pl/"><span>Strona główna</span></a>
+                    </li>
+                    <li class="last"><span><a
+                            href="javascript:document.forms['LangSelectForm'].p_lang.value='EN';%20document.forms['LangSelectForm'].submit();">English</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="h-message" onclick="window.open('http://www.bgzbnpparibas.pl/', '_blank')">
+            &nbsp;
+        </div>
+    </div>
+    <div id="waTabs">
+        <form action="/login/Redirect" id="GoToLoginForm" method="post" name="GoToLoginForm">
+            <input name="sid" type="hidden" value="I020023YMk5KrpDs7QXhzmEQ47UsEDcMBRccHiKe">
+            <input name="flow_id" type="hidden" value="entry-5324dgL33qzcH4I3oQjALb">
+            <input name="state_id" type="hidden" value="LOGIN">
+            <input name="action_token" type="hidden" value="JBxykBHVq8CDfZbbgivvl">
+            <input name="action" type="hidden" value="go_to_login">
+        </form>
+        <ul>
+            <li>
+                <a class="active" href="javascript:document.forms['GoToLoginForm'].submit();" id="tab_login"><span>Logowanie</span></a>
+            </li>
+            <li>
+                <a href="https://planet.bgzbnpparibas.pl/hades/ver/pl/demo_smart_planet/index2.html" id="tab_demo"
+                   target="_blank"><span>Demo</span></a>
+            </li>
+            <li>
+                <a href="http://www.bgzbnpparibas.pl/indywidualni/bankowosc-internetowa/planet.asp"
+                   id="tab_newUser"><span>Nowy użytkownik</span></a>
+            </li>
+            <li>
+                <a href="https://planet.bgzbnpparibas.pl/hades/do/Info?type=unlock" id="tab_unlock"><span>Odblokowanie dostępu</span></a>
+            </li>
+            <li>
+                <a href="https://planet.bgzbnpparibas.pl/hades/do/Info?type=technicalRequirements"
+                   id="tab_requirements"><span>Wymagania techniczne</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="login centerText" id="waContent">
+        <div class="leftPart" id="login-first-filler">
+            &nbsp;
+        </div>
+        <div class="content-left leftPart" style="margin-bottom:0px">
+            <div class="login-area">
+                <h2>Podaj swój login</h2>
+                <table class="reset">
+                    <tr>
+                        <td class="vAlignMiddle">
+                            <form action="/login/Redirect" id="LoginAliasForm" method="post" name="LoginAliasForm"
+                                  onsubmit="return submitForm(this);" target="_top">
+                                <input name="sid" type="hidden" value="I020023YMk5KrpDs7QXhzmEQ47UsEDcMBRccHiKe">
+                                <input name="flow_id" type="hidden" value="entry-5324dgL33qzcH4I3oQjALb">
+                                <input name="state_id" type="hidden" value="LOGIN">
+                                <input name="action_token" type="hidden" value="JBxykBHVq8CDfZbbgivvl">
+                                <input name="action" type="hidden" value="next">
+                                <input autocomplete="off" class="login-input" maxlength="25" name="p_alias" placeholder="" tabindex="1" type="text">
+                                <button class="greenButton" name="btn_next" tabindex="2" type="submit" value="next">
+                                    Dalej
+                                </button>
+                            </form>
+                            <script language="JavaScript" type="text/javascript">
+                                <!--
+                                var focusControl = document.forms["LoginAliasForm"].elements["p_alias"];
+                                if (focusControl.type != "hidden" && !focusControl.disabled) {
+                                    focusControl.focus();
+                                }
+                                // -->
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="securityInfo-area">
+                <table style="width:98%;">
+                    <tr>
+                        <td colspan="2"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="verisign-area">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            Pamiętaj!<br>
+                            Bank nie wymaga instalacji żadnych dodatkowych certyfikatów/aplikacji w celu korzystania z
+                            bankowości internetowej.<br>
+                            W przypadku Mobile Pl@net naszą aplikację należy pobierać wyłącznie z Google Play lub App
+                            Store.<br>
+                            <a class="no-decor" href="https://planet.bgzbnpparibas.pl/hades/do/Info?type=rules"><img
+                                    border="0" src="../static/img/larrow.gif"></a> &nbsp; <a class="no-decor"
+                                                                                             href="https://planet.bgzbnpparibas.pl/hades/do/Info?type=rules"
+                                                                                             style="cursor:pointer">więcej</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="certs-container">
+                                <div class="leftPart"><img alt="VeriSign Secure"
+                                                           onclick="window.open('https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=planet.bgzbnpparibas.pl&lang=en', 'Security','width=540px,height=520px,scrollbars=yes','_blank',true)"
+                                                           src="../static/img/vseal.gif" style="cursor:pointer"
+                                                           width="95px"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="content-right leftPart" style="margin-bottom:0px">
+            <div id="flashcontent" style="margin-bottom:0px"></div>
+            <script type="text/javascript">
+                swfobject.embedSWF("../static/img/flash.swf", "flashcontent", "344", "193", "9.0.0");
+            </script>
+            <div id="contactInfo">
+                <h3>Centrum Telefoniczne<br>
+                    Bank BGŻ BNP Paribas S.A.</h3><br>
+                <h4>801 321 123</h4>
+                <h4>lub +48 22 134 0000 (opłata zgodna z taryfą operatora)</h4>
+                <h4>(blokada/odblokowanie dostępu 24h/7)</h4>
+            </div>
+        </div>
+        <div class="leftPart" id="bannerDiv" style="padding-left:42px">
+            <iframe frameborder="0" height="100" scrolling="no" src="" style="border:0px" width="960"></iframe>
+        </div>
+        <div class="rightPart" id="login-last-filler">
+            &nbsp;
+        </div>
+    </div>
+    <div id="footer">
+        <ul>
+            <li>
+                <a href="https://planet.bgzbnpparibas.pl/hades/do/Info?type=security">Bezpieczeństwo systemu</a>
+            </li>
+            <li class="last">
+                <a href="http://www.bgzbnpparibas.pl/indywidualni/bankowosc-internetowa/planet.asp" target="_blank">Pytania
+                    i odpowiedzi</a>
+            </li>
+        </ul>
+    </div>
+</div><!-- BEGINING WREPORT BNP Paribas Polska -->
+<script>
+    var weborama = new Weborama('IDENT', 'LOGIN', '', '');
+    weborama.sendReport();
+</script> <!-- END WREPORT COPYRIGHT WEBORAMA-->
+</body>
+</html>

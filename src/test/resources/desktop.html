@@ -1,0 +1,974 @@
+<!DOCTYPE html><!-- BUILD TIMESTAMP: 2017-04-28 15:00 -->
+<html>
+<head>
+    <script>window['adrum-start-time'] = new Date().getTime();</script>
+    <script type='text/javascript' src='https://planet.bgzbnpparibas.pl/adrum/planet/adrum.js'></script>
+    <title>Pl@net - BGZ BNP Paribas S.A</title>
+    <META HTTP-EQUIV="Last-Modified" CONTENT="Fri, 28 Apr 2017 15:00:00 GMT">
+    <META http-equiv="Pragma" content="no-cache">
+    <META http-equiv="Cache-Control" content="no-cache">
+    <META http-equiv="Expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+    <link REL="SHORTCUT ICON" type="image/x-icon" HREF="../static/img/favicon.ico"/>
+    <link REL="FAVORITE ICON" type="image/x-icon" HREF="../static/img/favicon.ico"/>
+    <LINK href="../static/css/oldPlanet.css?v=20170428" type="text/css" rel="stylesheet"/>
+    <LINK href="../static/css/jquery.dataTables.css?v=20170428" type="text/css" rel="stylesheet"/>
+    <LINK href="../static/css/smartPlanet.css?v=20170428" type="text/css" rel="stylesheet"/>
+    <LINK href="../static/css/jquery-ui-1.9.2.custom.css?v=20170428" type="text/css" rel="stylesheet"/>
+    <LINK href="../static/css/progressCloud.css?v=20170428" type="text/css" rel="stylesheet"/>
+    <LINK href="../static/css/dropkick.css?v=20170428" type="text/css" rel="stylesheet"/>
+    <link href="../static/css/prettyCheckable.css?v=20170428" type="text/css" media="screen" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery-1.8.3.js?v=20170428"></script>
+    <script type="text/javascript" src="../static/js/jquery-ui-1.9.2.custom.min.js?v=20170428"></script>
+    <script language="JavaScript" src="../static/js/lang0.js?v=20170428" type="text/javascript"></script>
+    <script language="JavaScript" src="../static/js/general.js?v=20170428" type="text/javascript"></script>
+    <script language="JavaScript" src="../static/js/wreport.js?v=20170428" type="text/javascript"></SCRIPT>
+    <script type="text/javascript" src="../static/js/dataTable/jquery.dataTables.min.js?v=20170428"></script>
+    <script type="text/javascript" src="../static/js/jquery-smartplanet-widgets.js?v=20170428"></script>
+    <script type="text/javascript" src="../static/js/jquery-smartplanet-plugins.js?v=20170428"></script>
+    <script type="text/javascript" src="../static/js/jquery-smartplanet-plugins-app.js?v=20170428"></script>
+    <script type="text/javascript" src="../static/js/jquery.dropkick-1.0.0.js?v=20170428"></script>
+    <script type="text/javascript" src="../dwr/engine.js?v=20170428"></script>
+    <script type="text/javascript" src="../dwr/util.js?v=20170428"></script>
+    <script type="text/javascript" src="../dwr/interface/v.js?v=20170428"></script>
+    <script type="text/javascript" src="../static/js/prettyCheckable.js?v=20170428" charset="utf-8"></script>
+    <script type="text/javascript" src="../static/js/iframeheight.js?v=20170428" charset="utf-8"></script>
+    <script language="JavaScript">    var mainFormName = 'desktopForm';
+    var searchTextStr = '';
+    var showHelp = false
+    if (parent.signature != null) {
+        parent.location = "../index.jsp";
+    } else if (parent.SignatureFrame == null) {
+        parent.location = "../index.jsp";
+    }
+    var serverDate = new Date('06/24/2017 15:16:25');
+    var clientDate = new Date();
+    serverTimeOffset = serverDate.getTime() - clientDate.getTime();
+    var monthList = ['Stycze?', 'Luty', 'Marzec', 'Kwiecie?', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpie?', 'Wrzesie?', 'Pa?dziernik', 'Listopad', 'Grudzie?'];
+    var today = "Dzisiaj jest";
+    var curDate_LOC = new Date();
+    curDate_LOC.setDate(1);
+    curDate_LOC.getTheYear = curDate_LOC.getFullYear ? curDate_LOC.getFullYear : curDate_LOC.getYear;
+    var CurrDay = (new Date()).getDate();
+    var CurrMon = curDate_LOC.getMonth() + 1;
+    var CurrYear = curDate_LOC.getTheYear();
+    if (CurrDay < '10') CurrDay = '0' + CurrDay;
+    if (CurrMon < '10') CurrMon = '0' + CurrMon;
+    var MWJNS4 = document.layers && !document.all && navigator.mimeTypes['*'];
+    curDate_LOC.setYear(2017);
+    curDate_LOC.setMonth(5);
+    wreport_disabled = false;
+    var SYSTEM_LOCALE = 'PL';
+    var LANG_ID = '0';
+    authorizationMethod = "S";
+    var dateFieldSeparator = ".";
+    function onLoadFunction() {
+    }
+    var BrowserDetect = {
+        init: function () {
+            this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version";
+            this.OS = this.searchString(this.dataOS) || "an unknown OS";
+        },
+        searchString: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var dataString = data[i].string;
+                var dataProp = data[i].prop;
+                this.versionSearchString = data[i].versionSearch || data[i].identity;
+                if (dataString) {
+                    if (dataString.indexOf(data[i].subString) != -1)                    return data[i].identity;
+                } else if (dataProp)                return data[i].identity;
+            }
+        },
+        searchVersion: function (dataString) {
+            var index = dataString.indexOf(this.versionSearchString);
+            if (index == -1) return;
+            return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+        },
+        dataBrowser: [{
+            string: navigator.userAgent,
+            subString: "Chrome",
+            identity: "Chrome"
+        }, {string: navigator.userAgent, subString: "MSIE", identity: "Explorer", versionSearch: "MSIE"}],
+        dataOS: [{string: navigator.platform, subString: "Win", identity: "Windows"}, {
+            string: navigator.platform,
+            subString: "Mac",
+            identity: "Mac"
+        }, {string: navigator.platform, subString: "Linux", identity: "Linux"}]
+    };
+    BrowserDetect.init();
+    $(document).ready(function () {
+        BrowserDetect.init();
+        if (BrowserDetect.browser == "Explorer" && ( BrowserDetect.version == 5 || BrowserDetect.version == 6 || BrowserDetect.version == 7)) {
+            $("#columns").hide();
+            $("#compabilityAlert").show();
+        }
+    });
+    v.getV(sessionStorage.getItem('v'), {
+        callback: function (result) {
+            if (!result) {
+                top.location.href = '/retail/do/vibankSSOLogout';
+            }
+        }, async: true
+    });</script>
+</head>
+<body>
+<script language="JavaScript" src="../static/js/progressCloud.js?v=20170428" type="text/javascript"></script>
+<div id="progress" style="display:none;">
+    <div id="displayBox">
+        <div class="boxConf">
+            <div class="b-title"><span id="progressTitle">&nbsp;</span></div>
+            <div class="b-cont"></div>
+        </div>
+    </div>
+</div>
+<div id="container">
+    <div id="header">
+        <div id="h-top-bar">
+            <script>$(document).ready(function () {
+                setTimeout('waitForLoad()', 1000);
+                $("#user_name").click(function () {
+                    var selectWidth = $('#user_name').width();
+                    $('#h-dropdown').width(selectWidth + 18);
+                    $('#h-dropdown').slideToggle();
+                });
+                $("#h-dropdown").mouseup(function () {
+                    return false
+                });
+                $("#user_name").mouseup(function () {
+                    return false
+                });
+                $(document).mouseup(function () {
+                    $("#h-dropdown").hide();
+                });
+            });
+            function waitForLoad() {
+                var selectHeight = $('#h-dropdown').height();
+                $('#h-dropdown').height(selectHeight - 85);
+            }
+            function logOut() {
+                top.location.href = '/retail/do/vibankSSOLogout';
+            }</script>
+            <div class="rightPartLi">
+                <ul>
+                    <li><a href="../do/changeLang?language=en&P_RELOAD=Y" onclick="javascript:changeLanguage('en')">English</a>
+                    </li>
+                    <li><a href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Others')"> M?j
+                        profil </a></li>
+                    <li class="last"><a href="#" onclick="logOut()">Wyloguj</a></li>
+                </ul>
+            </div>
+            <div class="rightPart"><a href="#" id="user_name" class="h-select"> <span>Dmytro Bosenko - 3LXV63</span>
+            </a>
+                <div id="h-dropdown" style="overflow:hidden;">
+                    <div>
+                        <script>                var ownChangeDisabled = false;
+                        function onOwnChangeSelected(ownId) {
+                            if (ownChangeDisabled == true)                        return;
+                            ownChangeDisabled = true;
+                            _F = document.forms['changeCIFForm'];
+                            _F.p_own_id.value = ownId;
+                            _F.task.value = 'CIF_CHANGED';
+                            _F.submit();
+                        }                </script>
+                        <script>    weboramaObjects['CIF_CHANGED'] = new Weborama('IDENT', 'change account', '', '');        </script>
+                        <form name="changeCIFForm" method="POST" action="/retail/do/changeCIF" style="margin:0px;">
+                            <input type="hidden" name="task" value=""> <input type="hidden" name="p_own_id" value=""> <a
+                                href="#" onclick="onOwnChangeSelected('1573364');sendWeboramaReport('CIF_CHANGED')"><h1>
+                            Bosenko Dmytro </h1> 3LXV63 </a></form>
+                    </div>
+                    <div id="h-dropdown-login-info"><h1> Logowanie </h1> Ostatnie: 23.06.2017 15:33:32 <br/> Nieudane:
+                        16.06.2017 19:31:28
+                    </div>
+                    <img id="im" align="right" src="../phishing/phishing.jpg"
+                         onerror="this.width=0;this.height=0;this.style.borderStyle='none';"
+                         style=" left:-1px; margin-bottom: 0px;margin-top: -1px;vertical-align: middle;alignborder: 1px solid black;"/>
+                    <br></div>
+            </div>
+        </div>
+        <div id="h-message" class="hide"><h3>Bank zmieniaj?cego si? ?wiata</h3></div>
+    </div>
+    <div id="compabilityAlert" class="hide">
+        <div id="waContent">
+            <div class="waOutput">
+                <div class="list">
+                    <table class="detailsTable sizer">
+                        <tbody>
+                        <tr>
+                            <td align="center"> Twoja przegl?darka nie jest ju? obs?ugiwana lub masz w??czony tryb
+                                zgodno?ci.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center"> Zaktualizuj j? do nowszej wersji lub zmie? ustawienia.</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><h4><u>Wy??cz tryb zgodno?ci</u></h4></td>
+                        </tr>
+                        <tr>
+                            <td align="center"> W celu wy??czenia trybu zgodno?ci nale?y "wycisn??" przycisk na prawo od
+                                paska adresu (patrz na rysunku poni?ej).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center"> Teraz Pl@net b?dzie dzia?a? prawid?owo.</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><img src="../static/img/ieCompView0_bad.png"/></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><img src="../static/img/ieCompView0_good.png"/></td>
+                        </tr>
+                        <tr>
+                            <td align="center"> Je?li masz pytania skontaktuj si? z infolini? - nasi specjali?ci s? do
+                                Twojej dyspozycji.
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="columns">
+        <div id="left-menu">
+            <script>    function activate(id) {
+                $("#menu li").removeClass('active');
+                $("#" + id).addClass('active');
+            }
+            $('#m2').click(function () {
+                $('#transferDetails').hide();
+                $('#tabs-menu-content').show();
+            });
+            $(document).ready(function () {
+                $('#mFinancialReview,#mProductCenter,#mPayments,#mAccounts,#mCards,#mDeposits,#mInvestments,#mCredits,#mEurzad,#mapplications', '#mPfm').click(function () {
+                    $('#m0Img').show();
+                    $('#m0ImgA').hide();
+                });
+                $('#mCommunications').hover(function () {
+                    $('#m0Img').hide();
+                    $('#m0ImgA').show();
+                }, function () {
+                    if (!$(this).hasClass('active')) {
+                        $('#m0Img').show();
+                        $('#m0ImgA').hide();
+                    }
+                });
+            });</script>
+            <ul id="menu">
+                <li id="mCommunications" class=" mAlert"><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Communications')"
+                        onmouseover="window.status=''; return true;">
+                    <script>                            $('#mCommunications').css("backgroundImage", "url(../static/img/mWiadomosci_b.png)");
+                    $('#mCommunications').hover(function () {
+                        $(this).css("backgroundImage", "url(../static/img/mWiadomosciActive_b.png)");
+                    }, function () {
+                        $(this).css("backgroundImage", "url(../static/img/mWiadomosci_b.png)");
+                    });                    </script>
+                    <div id="m0Img"></div>
+                    <div id="m0ImgA" class="hide"></div>
+                    <br/> Wiadomo?ci (26) </a></li>
+                <li id="mFinancialReview" class="active"><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'FinancialReview')"
+                        onmouseover="window.status=''; return true;"> Moje finanse </a></li>
+                <li id="mProductCenter" class=""><a id="aHrefProduct"
+                                                    href="https://market.bgzbnpparibas.pl/logowanie-sso/" target="_top"
+                                                    onmouseover="window.status=''; return true;" onclick=""> Market </a>
+                </li>
+                <li id="mPayments" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Payments')"
+                        onmouseover="window.status=''; return true;"> P?atno?ci </a></li>
+                <li id="mAccounts" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Accounts')"
+                        onmouseover="window.status=''; return true;"> Rachunki </a></li>
+                <li id="mCards" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Cards')"
+                        onmouseover="window.status=''; return true;"> Karty </a></li>
+                <li id="mDeposits" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Deposits')"
+                        onmouseover="window.status=''; return true;"> Oszcz?dno?ci </a></li>
+                <li id="mInvestments" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Investments')"
+                        onmouseover="window.status=''; return true;"> Inwestycje </a></li>
+                <li id="mCredits" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Credits')"
+                        onmouseover="window.status=''; return true;"> Kredyty </a></li>
+                <li id="mEurzad" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Eurzad')"
+                        onmouseover="window.status=''; return true;"> e-Urz?d </a></li>
+                <li id="mPfm" class=""><a href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Pfm')"
+                                          onmouseover="window.status=''; return true;"> Zarz?dzanie finansami </a></li>
+                <li id="mApplications" class=""><a
+                        href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Applications')"
+                        onmouseover="window.status=''; return true;"> Wnioski </a></li>
+            </ul>
+        </div>
+        <div id="rightBanner"></div>
+        <div id="content">
+            <form name="desktopForm" id="desktop" method="post" action="/retail/do/desktop">
+                <script>        var clicked = true;
+                var form = document.getElementById("desktop");
+                function accountDetails(val, witchList) {
+                    form.whitchAccountsList.value = witchList;
+                    setTask(form, "ACC_DETAILS#" + val);
+                }
+                function depositDetails(val) {
+                    setTask(form, "DEPOSIT_DETAILS#" + val);
+                }
+                function cardDetails(val) {
+                    setTask(form, "FROM_DESKTOP_CARD_DETAILS#" + val);
+                }
+                function loanDetails(val) {
+                    setTask(form, "LOAN_DETAILS#" + val);
+                }
+                function sendDesktopReport() {
+                    sendWeboramaReport('WRP_DETAILS');
+                }
+                function fundsList() {
+                    setTask(form, "FUNDS_LIST_DESKTOP");
+                }
+                function investmentSecurities() {
+                    setTask(form, "INVESTMENT_SECURITIES");
+                }
+                function onPrintForm() {
+                    onPrintList(' ');
+                }
+                $(document).ready(function () {
+                    $('#k1').click(function () {
+                        if (!$(this).hasClass('unClickable')) {
+                            $('#tabAccounts').show();
+                            $('#tabCards').hide();
+                            $('#tabSavings').hide();
+                            $('#tabCredits').hide();
+                            $('.triangle').hide();
+                            $('#pulpitRachunki').show();
+                            $('#pulpitRachunki').css({
+                                'position': 'absolute',
+                                'top': $('#k1').offset().top + $('#k1').height() + 7,
+                                'left': $('#k1').offset().left + $('#k1').width() / 2 - 10
+                            });
+                        }
+                    });
+                    $('#k2').click(function () {
+                        if (!$(this).hasClass('unClickable')) {
+                            $('#tabAccounts').hide();
+                            $('#tabCards').show();
+                            $('#tabSavings').hide();
+                            $('#tabCredits').hide();
+                            $('.triangle').hide();
+                            $('#pulpitKarty').show();
+                            $('#pulpitKarty').css({
+                                'position': 'absolute',
+                                'top': $('#k2').offset().top + $('#k2').height() + 7,
+                                'left': $('#k2').offset().left + $('#k2').width() / 2 - 10
+                            });
+                        }
+                    });
+                    $('#k3').click(function () {
+                        if (!$(this).hasClass('unClickable')) {
+                            $('#tabAccounts').hide();
+                            $('#tabCards').hide();
+                            $('#tabSavings').show();
+                            $('#tabCredits').hide();
+                            $('.triangle').hide();
+                            $('#pulpitOszczednosci').show();
+                            $('#pulpitOszczednosci').css({
+                                'position': 'absolute',
+                                'top': $('#k3').offset().top + $('#k3').height() + 7,
+                                'left': $('#k3').offset().left + $('#k3').width() / 2 - 10
+                            });
+                        }
+                    });
+                    $('#k4').click(function () {
+                        if (!$(this).hasClass('unClickable')) {
+                            $('#tabAccounts').hide();
+                            $('#tabCards').hide();
+                            $('#tabSavings').hide();
+                            $('#tabCredits').show();
+                            $('.triangle').hide();
+                            $('#pulpitKredyty').show();
+                            $('#pulpitKredyty').css({
+                                'position': 'absolute',
+                                'top': $('#k4').offset().top + $('#k4').height() + 7,
+                                'left': $('#k4').offset().left + $('#k4').width() / 2 - 10
+                            });
+                        }
+                    });
+                    $('#k1, #k2, #k3, #k4').hover(function () {
+                        $(this).addClass('active');
+                    }, function () {
+                        if (!$(this).hasClass('selected')) $(this).removeClass('active');
+                    });
+                    $('#k1, #k2, #k3, #k4').click(function () {
+                        if (!$(this).hasClass('unClickable')) {
+                            $('#k1, #k2, #k3, #k4').removeClass('active');
+                            $('#k1, #k2, #k3, #k4').removeClass('selected');
+                            $(this).addClass('active');
+                            $(this).addClass('selected');
+                        }
+                    });
+                    var h1 = Math.max($('#k1').height(), $('#k2').height());
+                    var h2 = Math.max($('#k3').height(), $('#k4').height());
+                    var h3 = Math.max(h1, h2);
+                    $('#k1 .grayBg').css('padding-bottom', h3 - $('#k1').height());
+                    $('#k2 .grayBg').css('padding-bottom', h3 - $('#k2').height());
+                    $('#k3 .grayBg').css('padding-bottom', h3 - $('#k3').height());
+                    $('#k4 .grayBg').css('padding-bottom', h3 - $('#k4').height());
+                    $('#otherAccountsLabel').hover(function () {
+                        $('#otherAccounts').css({
+                            'position': 'absolute',
+                            'top': $('#otherAccountsLabel').offset().top + 25,
+                            'left': $('#otherAccountsLabel').offset().left - 40,
+                            'z-index': 3
+                        });
+                        $('#oA').css({
+                            'position': 'absolute',
+                            'top': $('#otherAccountsLabel').offset().top + 16,
+                            'left': $('#otherAccountsLabel').offset().left - 40
+                        });
+                        $('#otherAccounts').show();
+                        $('#oA').show();
+                    }, function () {
+                        $('#otherAccounts').hide();
+                        $('#oA').hide();
+                    });
+                    $('#otherDepositsLabel').hover(function () {
+                        $('#otherDeposits').css({
+                            'position': 'absolute',
+                            'top': $('#otherDepositsLabel').offset().top + 25,
+                            'left': $('#otherDepositsLabel').offset().left - 40,
+                            'z-index': 3
+                        });
+                        $('#oD').css({
+                            'position': 'absolute',
+                            'top': $('#otherDepositsLabel').offset().top + 16,
+                            'left': $('#otherDepositsLabel').offset().left - 40
+                        });
+                        $('#otherDeposits').show();
+                        $('#oD').show();
+                    }, function () {
+                        $('#otherDeposits').hide();
+                        $('#oD').hide();
+                    });
+                    $('#otherCreditsLabel').hover(function () {
+                        $('#otherCredits').css({
+                            'position': 'absolute',
+                            'top': $('#otherCreditsLabel').offset().top + 25,
+                            'left': $('#otherCreditsLabel').offset().left - 40,
+                            'z-index': 3
+                        });
+                        $('#oC').css({
+                            'position': 'absolute',
+                            'top': $('#otherCreditsLabel').offset().top + 16,
+                            'left': $('#otherCreditsLabel').offset().left - 40
+                        });
+                        $('#otherDeposits').show();
+                        $('#oC').show();
+                    }, function () {
+                        $('#otherDeposits').hide();
+                        $('#oC').hide();
+                    });
+                });    </script>
+                <script>    weboramaObjects['WRP_DETAILS'] = new Weborama('MAIN', 'LIST', '', '');        </script>
+                <script language="JavaScript" type="text/javascript">    var generPageDate = getCurrentDate();
+                GLOBAL_S_DATA = generPageDate;
+                var form = document.forms['desktopForm'];</script>
+                <script>//csrfTokenFormAction: do/desktop</script>
+                <div class="noVisibleOnPrint clearFix" id="smartInfoContainer"><input type="hidden" name="rnd"
+                                                                                      value="69109028193279258387208980">
+                </div>
+                <input type="hidden" name="task" value="">
+                <div id="keyMessage" class="clearHeight clearBackground"
+                     style="height: 40px !important; margin-top: 10px;">
+                    <div class="leftPart w100 dashboard">
+                        <div class="logo">&nbsp;</div>
+                        <h1> Moje finanse&nbsp;&nbsp;12 263,54&nbsp;PLN </h1></div>
+                </div>
+                <div style="height: 100%;">        <!-- box rachunki i oszczednosci START -->
+                    <div id="k1" class="desktopSelector active selected">
+                        <div id="f1Top" class="activeTop"></div>
+                        <div id="f1"><span id="w1">Rachunki</span> <span id="w1">i oszcz?dno?ci</span></div>
+                        <div class="grayBg">
+                            <div class="title">Suma dost?pnych ?rodk?w</div>
+                            <div class="moneyMoney" style="padding-bottom: 5px;"> 332 635,36 PLN<br> 112 041,93 EUR<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="oA"></div>
+                    <div id="otherAccounts" class="desktopAdditionalInfo"></div><!-- box rachunki i oszczednosci END -->
+                    <!-- box karty kredytowe -->
+                    <div id="k2" class="desktopSelector">
+                        <div id="f2Top" class="activeTop"></div>
+                        <div id="f2"><span>Karty</span></div>
+                        <div class="grayBg">
+                            <div id="cardsTitle" class="title" style="border-bottom:none;"></div>
+                            <div class="moneyMoney"></div>
+                        </div>
+                    </div>                <!-- box karty kredytowe END -->                <!-- box inwestycje -->
+                    <div id="k3" class="desktopSelector">
+                        <div id="f3Top" class="activeTop"></div>
+                        <div id="f3"><span>Inwestycje</span></div>
+                        <div class="grayBg">
+                            <div class="title">Moje inwestycje</div>
+                            <div class="moneyMoney" style="padding-bottom: 5px;"> Brak inwestycji</div>
+                        </div>
+                    </div>
+                    <div id="oD"></div>
+                    <div id="otherDeposits" class="desktopAdditionalInfo"></div>        <!-- box inwestycje 	END-->
+                    <!-- box KREDYTY -->
+                    <div id="k4" class="desktopSelector">
+                        <div id="f4Top" class="activeTop"></div>
+                        <div id="f4"><span>Kredyty</span></div>
+                        <div class="grayBg">
+                            <div class="title">Do sp?aty</div>
+                            <div class="moneyMoney" style="padding-bottom: 5px;"> Brak kredyt?w</div>
+                        </div>
+                    </div>
+                    <div id="oC"></div>
+                    <div id="otherCredits" class="desktopAdditionalInfo"></div>            <!-- box KREDYTY END--></div>
+                <div id="pulpitRachunki" class="triangle" style="z-index:2;"></div>
+                <div id="pulpitKarty" class="triangle" style="z-index:2;"></div>
+                <div id="pulpitOszczednosci" class="triangle" style="z-index:2;"></div>
+                <div id="pulpitKredyty" class="triangle" style="z-index:2;"></div>
+                <div id="waContent">
+                    <div class="waOutput">
+                        <div class="list">                <!-- box rachunki i oszczednosci -->
+                            <script>        $(document).ready(function () {
+                                if (document.getElementById('wypRach')) {
+                                    $('#wypRach').find('h3').addClass('clickable visitedHeader');
+                                    $('#wypRach').css({"margin-bottom": "0"});
+                                    $('#wypRachOszcz').find('h3').removeClass('clickable visitedHeader');
+                                    $('#wypRachOszcz').css({"margin-bottom": "4px"});
+                                    $('#tabRachunkiOszcz').hide();
+                                    $('#wypLokT').find('h3').removeClass('clickable visitedHeader');
+                                    $('#wypLokT').css({"margin-bottom": "0px"});
+                                    $('#tabOszczednosci').hide();
+                                } else {
+                                    $('#wypRachOszcz').find('h3').addClass('clickable visitedHeader');
+                                    $('#wypRachOszcz').css({"margin-bottom": "0"});
+                                    $('#tabRachunkiOszcz').show();
+                                    $('#wypLokT').find('h3').removeClass('clickable visitedHeader');
+                                    $('#wypLokT').css({"margin-bottom": "0px"});
+                                    $('#tabOszczednosci').hide();
+                                }
+                                if (document.getElementById('wypLokI')) {
+                                    $('#wypLokI').find('h3').removeClass('clickable visitedHeader');
+                                    $('#tabOszczednosciIwestycje').hide();
+                                    $('#wypLokT').css({"margin-bottom": "4px"});
+                                }
+                                $('#wypLokT').click(function () {
+                                    if ($('#tabOszczednosci').is(":visible")) {
+                                        $('#wypLokT').find('h3').removeClass('clickable visitedHeader');
+                                        if (document.getElementById('wypLokI')) {
+                                            $('#wypLokT').css({"margin-bottom": "4px"});
+                                        } else {
+                                            $('#wypLokT').css({"margin-bottom": "0px"});
+                                        }
+                                        $('#tabOszczednosci').hide();
+                                    } else {
+                                        $('#wypLokT').find('h3').addClass('clickable visitedHeader');
+                                        $('#wypLokT').css({"margin-bottom": "0"});
+                                        $('#tabOszczednosci').show();
+                                    }
+                                });
+                                $('#wypRach').click(function () {
+                                    if ($('#tabRachunki').is(":visible")) {
+                                        $('#pokRachunki').find('h3').removeClass('clickable visitedHeader');
+                                        $('#pokRachunki').css({"margin-bottom": "4px"});
+                                        $('#tabRachunki').hide();
+                                    } else {
+                                        $('#pokRachunki').find('h3').addClass('clickable visitedHeader');
+                                        $('#pokRachunki').css({"margin-bottom": "0"});
+                                        $('#tabRachunki').show();
+                                    }
+                                });
+                                $('#wypRachOszcz').click(function () {
+                                    if ($('#tabRachunkiOszcz').is(":visible")) {
+                                        $('#wypRachOszcz').find('h3').removeClass('clickable visitedHeader');
+                                        $('#wypRachOszcz').css({"margin-bottom": "4px"});
+                                        $('#tabRachunkiOszcz').hide();
+                                    } else {
+                                        $('#wypRachOszcz').find('h3').addClass('clickable visitedHeader');
+                                        $('#wypRachOszcz').css({"margin-bottom": "0"});
+                                        $('#tabRachunkiOszcz').show();
+                                    }
+                                });
+                                $('#wypLokI').click(function () {
+                                    if ($('#tabOszczednosciIwestycje').is(":visible")) {
+                                        $('#wypLokI').find('h3').removeClass('clickable visitedHeader');
+                                        $('#tabOszczednosciIwestycje').hide();
+                                    } else {
+                                        $('#wypLokI').find('h3').addClass('clickable visitedHeader');
+                                        $('#wypLokI').css({"margin-bottom": "0"});
+                                        $('#tabOszczednosciIwestycje').show();
+                                    }
+                                });
+                            });
+                            function methodMZ() {
+                                var title = 'Widoczne oprocentowanie obowi?zuje dla ?rodk?w zgromadzonych na danym rachunku oszcz?dno?ciowym. Szczeg?y mo?esz sprawdzi? w Tabeli Oprocentowania na stronie <a href=" https://www.bgzbnpparibas.pl/_fileserver/item/1508540">www</a> banku oraz w zak?adce Szczeg?y rachunku.';
+                                $('.mytooltip').tooltip();
+                                $('.mytooltip').attr('title', title)
+                                $('.mytooltip').tooltip("open");
+                                $('.dk_fouc').click(function () {
+                                    $('.mytooltip').tooltip("disable");
+                                });
+                            }</script><!-- box rachunki i oszczednosci -->
+                            <div id="tabAccounts" style="display:;"><input type="hidden" name="whitchAccountsList"
+                                                                           value="">
+                                <div id="accordionContainer">
+                                    <div style="border: 3px solid #018A83;">
+                                        <div id="pokRachunki" class="waAccordionMainPage">
+                                            <div id="wypRach" style="border: 1px solid #A1A1A1; margin-bottom: 4px"><h3
+                                                    class="select"> Rachunek oszcz?dno?ciowo-rozliczeniowy <span
+                                                    class="headerSelectInfo">1 252 263,54&nbsp;PLN <span
+                                                    title='Suma dostepnych ?rodk?w na rachunkach rozliczeniowo - oszcz?dno?ciowych tj. bez ?rodk?w zablokowanych, z uwzgl?dnieniem kredytu w ROR'><img
+                                                    style="vertical-align: middle; margin-left: 5px;"
+                                                    src="../static/img/icoHelp.png"/></span></span></h3></div>
+                                            <div class="accordionContent">
+                                                <div id="tabRachunki" style="display:;">
+                                                    <table style="font-size: 13px;">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="desktopFirst">Nazwa rachunku</th>
+                                                            <th>Numer rachunku</th>
+                                                            <th style="text-align: right; padding-right: 15px;">Saldo
+                                                                dost?pne
+                                                            </th>
+                                                            <th style="text-align: right; padding-right: 20px;">Saldo
+                                                                ksi?gowe
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="trbg1">
+                                                            <td id="accRedirect" class="desktopFirst"><span
+                                                                    class="desktopLink"
+                                                                    onClick="accountDetails('0', 'accounts');sendDesktopReport()">														 RACH OSZCZ?DN-ROZLICZEN 												</span>
+                                                            </td>
+                                                            <td>11 2222 3333 4444 5555 6666 7777</td>
+                                                            <td align="right" nowrap>332 635,36 PLN</td>
+                                                            <td class="last" align="right" nowrap>332 635,36 PLN</td>
+                                                        </tr>
+                                                        <tr class="trbg2">
+                                                            <td id="accRedirect" class="desktopFirst"><span
+                                                                    class="desktopLink"
+                                                                    onClick="accountDetails('1', 'accounts');sendDesktopReport()">														 RACHUNEK WALUTOWY 												</span>
+                                                            </td>
+                                                            <td>88 8888 1462 5454 5252 62623 0042</td>
+                                                            <td align="right" nowrap>112 041,93 EUR</td>
+                                                            <td class="last" align="right" nowrap>112 041,93 EUR</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="pokRachunkiOszcz" class="waAccordionMainPage">
+                                            <div id="wypRachOszcz"
+                                                 style="border: 1px solid #A1A1A1; margin-bottom: 4px"><h3
+                                                    class="select"> Rachunki oszcz?dno?ciowe <span
+                                                    class="headerSelectInfo">0,00&nbsp;PLN <span
+                                                    title='Suma dostepnych ?rodk?w na rachunkach oszcz?dno?ciowych'><img
+                                                    style="vertical-align: middle;"
+                                                    src="../static/img/icoHelp.png"/></span></span></h3></div>
+                                            <div class="accordionContent" id="2">
+                                                <div id="tabRachunkiOszcz" style="display:;">
+                                                    <table style="font-size: 13px;">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="desktopFirst">Nazwa rachunku</th>
+                                                            <th>Numer rachunku</th>
+                                                            <th style="text-align: right; padding-right: 15px;">Saldo
+                                                                dost?pne
+                                                            </th>
+                                                            <th style="text-align: right; padding-right: 20px;">Saldo
+                                                                ksi?gowe
+                                                            </th>
+                                                            <th style="text-align: right; padding-right: 5px;">
+                                                                Oprocentowanie<span onmouseover="methodMZ()"><img
+                                                                    style="vertical-align: middle;"
+                                                                    src="../static/img/icoHelp.png"/></span><span
+                                                                    class="mytooltip"></span></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td colspan='4' style="text-align: center">Brak rachunk?w
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id='pokLokatyTerminowe' class="waAccordionMainPage">
+                                            <div class="accordionContent" id="3">
+                                                <div id="wypLokT" style="border: 1px solid #A1A1A1; margin-bottom: 4px">
+                                                    <h3 class="select"> Lokaty <span class="headerSelectInfo">0,00&nbsp;PLN <span
+                                                            title='Twoje oszcz?dno?ci na lokatach terminowych'><img
+                                                            style="vertical-align: middle; margin-left: 5px;"
+                                                            src="../static/img/icoHelp.png"/></span></span></h3></div>
+                                                <div id="tabOszczednosci" style="display: block;">
+                                                    <table style="font-size: 13px;">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="desktopFirst">Nazwa lokaty</th>
+                                                            <th>Data rozpocz?cia<br> Data zako?czenia</th>
+                                                            <th style="text-align: right; padding-right: 15px;">
+                                                                Oprocentowanie
+                                                            </th>
+                                                            <th style="text-align: right; padding-right: 15px;">Kwota
+                                                            </th>
+                                                            <th style="text-align: right; padding-right: 0px;">
+                                                                Prognozowane<br/> odsetki brutto
+                                                            </th>
+                                                            <th style="text-align: right; padding-right: 5px;"><span
+                                                                    title='Prognozowany zysk przed opodatkowaniem na zako?czenie lokaty'><img
+                                                                    style="vertical-align: middle;"
+                                                                    src="../static/img/icoHelp.png"/></span></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td colspan='6' style="text-align: center">Brak lokat
+                                                                terminowych
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>        $(document).ready(function () {
+                                if (window.clicked) {
+                                    $('#k1').trigger('click');
+                                    window.clicked = false;
+                                }
+                            });    </script>
+                            <div id="tabCards" style="display: none;">
+                                <table style="border:3px solid rgb(107,182,203); font-size: 13px;">
+                                    <thead>
+                                    <tr>
+                                        <th class="desktopFirst">Nazwa karty</th>
+                                        <th>Posiadacz karty</th>
+                                        <th style="text-align: right; padding-right: 15px;">Numer karty</th>
+                                        <th style="text-align: right; padding-right: 20px;">Status karty</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <script>                                    $(document).ready(function () {
+                                        if (window.clicked) {
+                                            $('#k2').trigger('click');
+                                            window.clicked = false;
+                                        }
+                                    });                                    </script>
+                                    <tr class="trbg1">
+                                        <td id="carRedirect" class="desktopFirst"><span class="desktopLink2"
+                                                                                        onClick="cardDetails('0');sendDesktopReport()">													MasterCard Debit Standard											</span>
+                                        </td>
+                                        <td>Gates Bill</td>
+                                        <td style="text-align: right; padding-right: 20px;">1111 22** **** 3333</td>
+                                        <td style="text-align: right; padding-right: 20px;">Aktywna</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <script>    $(document).ready(function () {
+                                if ($('#wypFunIwe').length) {
+                                    $('#wypFunIwe').find('h3').addClass('clickable visitedHeader');
+                                } else {
+                                    $('#wypPort').find('h3').addClass('clickable visitedHeader');
+                                    $('#tabPortfelPapierow').show();
+                                }
+                                $('#pokFunduszeIwestycyjne').click(function () {
+                                    if ($('#tabFunduszeIwestycyjne').is(":visible")) {
+                                        $('#wypFunIwe').find('h3').removeClass('clickable visitedHeader');
+                                        $('#tabFunduszeIwestycyjne').hide();
+                                    } else {
+                                        $('#wypFunIwe').find('h3').addClass('clickable visitedHeader');
+                                        $('#tabFunduszeIwestycyjne').show();
+                                    }
+                                });
+                                $('#pokPortfelPapierow').click(function () {
+                                    if ($('#tabPortfelPapierow').is(":visible")) {
+                                        $('#wypPort').find('h3').removeClass('clickable visitedHeader');
+                                        $('#tabPortfelPapierow').hide();
+                                    } else {
+                                        $('#wypPort').find('h3').addClass('clickable visitedHeader');
+                                        $('#tabPortfelPapierow').show();
+                                    }
+                                });
+                            });</script>
+                            <div id="tabSavings">
+                                <div id="accordionContainer">
+                                    <div style="border: 3px solid rgb(0, 152, 188); ">
+                                        <div id="pokFunduszeIwestycyjne" class="waAccordionMainPageInw">
+                                            <div id="wypFunIwe" style=" border: 1px solid #A1A1A1;"><h3
+                                                    id="accordion_0_h"> Fundusze Inwestycyjne </h3></div>
+                                            <div class="accordionContent" id="accordion_0">
+                                                <div id="tabFunduszeIwestycyjne" style="display: ;">
+                                                    <div class="waSmartInfo smartInfoWarning"> Nie posiadasz jednostek
+                                                        funduszy zapisanych na rejestrach otwartych za po?rednictwem
+                                                        Pl@net.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tabCredits" style="display: none;">
+                                <table style="border:3px solid rgb(242,114,130); font-size: 13px;">
+                                    <thead>
+                                    <tr>
+                                        <th class="desktopFirst">Nazwa kredytu</th>
+                                        <th> Data rozpocz?cia<br> Data zako?czenia</th>
+                                        <th style="text-align: right; padding-right: 15px;">Oprocentowanie</th>
+                                        <th style="text-align: right; padding-right: 15px;">Kwota uruchomiona</th>
+                                        <th style="text-align: right; padding-right: 20px;">Kapita? do sp?aty</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td colspan='6' style="text-align: center"> Brak kredyt?w</td>
+                                    </tr>
+                                    <script>                                    $('#k4').addClass('unClickable');                                </script>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomBox">
+                        <div class="grayBg upperBox">
+                            <div id="bottomBoxMessage"></div>
+                            <div style="font-size: 17px; font-weight: bold; padding: 12px 0px 1px 45px">Wiadomo?ci</div>
+                            <div class="lowerBottomFont" style="padding-left: 45px;">Sprawd? w Twojej skrzynce
+                                odbiorczej czekaj? na Ciebie<br>nieprzeczytane wiadomo?ci
+                            </div>
+                        </div>
+                        <div class="grayBg lowerBox">
+                            <div class="lowerBottomFont" style="padding-top: 35px; padding-left: 45px;"><a
+                                    href="javascript:changeActiveTopMenu(document.forms['changeCIFForm'],'Communications')">26
+                                nieprzeczytanych wiadomo?ci</a></div>
+                        </div>
+                    </div>
+                    <div class="bottomBox">
+                        <div class="grayBg upperBox">
+                            <div id="bottomBoxPhone"></div>
+                            <div style="font-size: 17px; font-weight: bold; padding: 12px 0px 1px 45px">Kontakt</div>
+                            <div class="lowerBottomFont" style="padding-left: 45px;">Masz pytania, skontaktuj si? z
+                                nami
+                            </div>
+                        </div>
+                        <div class="grayBg lowerBox">
+                            <div style="float: left; width: 120px; padding-left: 45px; padding-top: 15px;">
+                                <div><span id="desktopSmartphone" class="vAlignMiddle"></span><span
+                                        class="lowerBottomFont">801 321 123</span></div>
+                                <div><span id="desktopPhone" class="vAlignMiddle"></span><span class="lowerBottomFont">22 566 99 99</span>
+                                </div>
+                            </div>
+                            <div style="float: left; width: 250px; padding-top: 15px;">
+                                <div><a href="https://www.facebook.com/bgzbnpparibas" target="_blank"><span
+                                        id="desktopFacebook" class="vAlignMiddle"></span></a><span
+                                        class="lowerBottomFont">Znajd? nas na Facebooku</span><br></div>
+                                <div><a href="http://www.youtube.com/user/BNPParibasBank" target="_blank"><span
+                                        id="desktopYouTube" class="vAlignMiddle"></span></a><span
+                                        class="lowerBottomFont">Obserwuj nas na YouTube</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </form>
+        <div style="overflow:hidden"></div><!-- END content -->    </div> <!-- END columns -->
+    <div id="bottomBanner" class="hide"></div>
+    <div id="help-container" style="display:none">
+        <div id="context-help">
+            <div id="context-help-text"> Witamy w module Pomocy, kt?ry u?atwi Ci korzystanie z systemu Pl@net. Pomoc
+                mo?na w ka?dej chwili wy??czy? wybieraj?c opcj? <i>Wy??cz pomoc</i> z menu na szarym pasku u g?ry
+                ekranu, lub ponownie w??czy? wybieraj?c opcj? <i>W??cz pomoc</i>.<br>Na stronie <i>Finanse osobiste</i>
+                prezentowane s? zbiorcze informacje o produktach i rachunkach, jakie posiadasz w Bank BG? BNP Paribas
+                S.A..
+                <div style="float: right;"><a
+                        href="javascript:showHelpWindow('0_EXBNP/FinancialReview','desktop');"><img
+                        src="../static/img/green-arrow-right1.png" border="0" alt=""/>&nbsp;wi?cej</a></div>
+            </div>
+        </div>
+    </div>
+    <form name="ManageCardForm" method="POST" action="../do/cardsSettings"><input type="hidden" name="task" value="">
+    </form>
+    <script></script>        <!-- BEGINING WREPORT BNP Paribas Polska -->
+    <script>    $('input, textarea').each(function () {
+        if (!this.addEventListener) {
+            this.attachEvent('drop', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                var dataHolderAttr = 'text/plain';
+                if (is_ie) {
+                    dataHolderAttr = 'Text';
+                }
+                this.value = event.dataTransfer.getData(dataHolderAttr);
+                $(this).change();
+            });
+        } else {
+            this.addEventListener('drop', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                var dataHolderAttr = 'text/plain';
+                if (is_ie) {
+                    dataHolderAttr = 'Text';
+                }
+                this.value = event.dataTransfer.getData(dataHolderAttr);
+                $(this).change();
+            }, false);
+        }
+    });
+    weboramaObjects[""] = new Weborama("MAIN", "PERSONAL_FINANCE", "", "");
+    sendWeboramaReport("");
+    if (!window.addEventListener) {
+        window.attachEvent("message", function (event) {
+            $('#rightBanner').hide();
+            $('#bottomBanner').hide();
+            showProgress();
+            return true;
+        });
+    } else {
+        window.addEventListener("message", function (event) {
+            $('#rightBanner').hide();
+            $('#bottomBanner').hide();
+            showProgress();
+            return true;
+        });
+    }        </script>    <!-- END WREPORT COPYRIGHT WEBORAMA-->
+    <div id="footer">
+        <script>    function changeHelpStatus() {
+            if (showHelp) {
+                document.getElementById("help-container").style.display = 'none';
+                document.getElementById("helpStatusLink").innerHTML = 'W??cz pomoc';
+            } else {
+                document.getElementById("help-container").style.display = '';
+                document.getElementById("helpStatusLink").innerHTML = 'Wy??cz pomoc';
+            }
+            showHelp = !showHelp;
+            var mqObject = new microQueryObjWithoutField("showHelpParam", "ShowHelpParameter", showHelp ? "turnOn" : "turnOff", true, null);
+            executeMicroQuery(mqObject);
+            return;
+        }</script>
+        <ul>
+            <li><a href="http://www.bgzbnpparibas.pl/kontakt/centrum-telefoniczne.asp" target="_blank">Kontakt</a></li>
+            <li><a href="http://www.bgzbnpparibas.pl/news/komunikaty.asp" target="_blank">Aktualno?ci</a></li>
+            <li><a href="../do/rateOfExchangeTable">Kursy walut</a></li>
+            <li><a href="../do/rateOfExchangeTableVip">Kursy walut Premium</a></li>
+            <li><a href="../do/securityInfo">Bezpiecze?stwo systemu</a></li>
+            <li><a href="http://www.bgzbnpparibas.pl/indywidualni/bankowosc-internetowa/planet.asp" target="_blank">Pytania
+                i odpowiedzi</a></li>
+            <li class="last"><a href="#" id="helpStatusLink" onClick="changeHelpStatus()"> W??cz pomoc </a></li>
+            <br/> <span class="grey">			Komponent:			<script> if (top.parent.SignatureFrame && top.parent.SignatureFrame.componentVersion) document.write(top.parent.SignatureFrame.componentVersion); </script>			Klucze:0			EQ:Nie			S:cib-app64	    </span>
+        </ul>
+    </div>
+    <script language="JavaScript" type="text/javascript"></script>
+</div><!-- END container -->  </body>
+</html></div>
