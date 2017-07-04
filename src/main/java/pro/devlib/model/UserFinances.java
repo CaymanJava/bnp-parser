@@ -8,7 +8,9 @@ import java.util.List;
 @Builder
 @Data
 public class UserFinances {
-    private Amount sumAmount;
-    private List<Account> accounts;
-    private List<Card> cards;
+
+  private Amount sumAmount;
+  private List<Account> accounts;
+  private List<Card> cards;
+
 }

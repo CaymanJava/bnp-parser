@@ -14,25 +14,26 @@ import java.util.Map;
 @Scope("session")
 @Slf4j
 public class StartPageService {
-    private final String startPageUrl;
-    private final String startPageReferer;
-    private final RequestExecutor requestExecutor;
-    private final StartPageParser startPageParser;
 
+  private final String startPageUrl;
+  private final String startPageReferer;
+  private final RequestExecutor requestExecutor;
+  private final StartPageParser startPageParser;
 
-    public StartPageService(@Value("${start.page.url}") String startPageUrl,
-                            @Value("${start.page.referer}") String startPageReferer,
-                            RequestExecutor requestExecutor,
-                            StartPageParser startPageParser) {
-        this.startPageUrl = startPageUrl;
-        this.startPageReferer = startPageReferer;
-        this.requestExecutor = requestExecutor;
-        this.startPageParser = startPageParser;
-    }
+  public StartPageService(@Value("${start.page.url}") String startPageUrl,
+                          @Value("${start.page.referer}") String startPageReferer,
+                          RequestExecutor requestExecutor,
+                          StartPageParser startPageParser) {
+    this.startPageUrl = startPageUrl;
+    this.startPageReferer = startPageReferer;
+    this.requestExecutor = requestExecutor;
+    this.startPageParser = startPageParser;
+  }
 
-    public Map<String, String> getParametersFromStartPage() {
-        log.info("Get parameters from start page.");
-        String htmlFromStartPage = requestExecutor.executeGetRequest(startPageUrl, startPageReferer);
-        return startPageParser.parseStartPage(htmlFromStartPage);
-    }
+  public Map<String, String> getParametersFromStartPage() {
+    log.info("Get parameters from start page.");
+    String htmlFromStartPage = requestExecutor.executeGetRequest(startPageUrl, startPageReferer);
+    return startPageParser.parseStartPage(htmlFromStartPage);
+  }
+
 }

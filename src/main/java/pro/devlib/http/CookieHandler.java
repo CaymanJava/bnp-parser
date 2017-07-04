@@ -12,28 +12,30 @@ import java.util.Map;
 @Component
 @Scope("session")
 public class CookieHandler {
-    private Map<String, Cookie> cookies;
 
-    public CookieHandler() {
-        this.cookies = new HashMap<>();
-    }
+  private Map<String, Cookie> cookies;
 
-    void addAndMerge(List<Cookie> newCookies) {
-        newCookies.forEach(c -> cookies.put(c.getName(), c));
-    }
+  public CookieHandler() {
+    this.cookies = new HashMap<>();
+  }
 
-    String getCookiesAsString(){
-        StringBuilder result = new StringBuilder();
-        for (Cookie cookie : cookies.values()) {
-            result.append(cookie.getName());
-            result.append("=");
-            result.append(cookie.getValue());
-            result.append("; ");
-        }
-        return result.toString();
-    }
+  void addAndMerge(List<Cookie> newCookies) {
+    newCookies.forEach(c -> cookies.put(c.getName(), c));
+  }
 
-    public void clear(){
-        cookies.clear();
+  String getCookiesAsString() {
+    StringBuilder result = new StringBuilder();
+    for (Cookie cookie : cookies.values()) {
+      result.append(cookie.getName());
+      result.append("=");
+      result.append(cookie.getValue());
+      result.append("; ");
     }
+    return result.toString();
+  }
+
+  public void clear() {
+    cookies.clear();
+  }
+
 }

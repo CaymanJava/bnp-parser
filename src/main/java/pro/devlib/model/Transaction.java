@@ -10,9 +10,11 @@ import java.time.LocalDate;
 @Builder
 @Data
 public class Transaction {
-    @JsonSerialize(using = ToStringSerializer.class)
-    private LocalDate date;
-    private String description;
-    private Amount amount;
-    private Amount balanceAfterOperation;
+
+  @JsonSerialize(using = ToStringSerializer.class)
+  private LocalDate date;
+  private String description;
+  private Amount amount;
+  private Amount balanceAfterOperation;
+
 }

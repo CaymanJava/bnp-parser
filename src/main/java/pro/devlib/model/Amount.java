@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @Data
 public class Amount {
-    private double value;
-    private String currency;
+
+  private double value;
+  private String currency;
+
 }

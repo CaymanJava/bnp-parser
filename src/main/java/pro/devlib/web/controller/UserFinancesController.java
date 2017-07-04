@@ -17,17 +17,17 @@ import pro.devlib.service.UserFinancesService;
 @Slf4j
 public class UserFinancesController {
 
-    private final UserFinancesService userFinancesService;
+  private final UserFinancesService userFinancesService;
 
-    @Autowired
-    public UserFinancesController(UserFinancesService userFinancesService) {
-        this.userFinancesService = userFinancesService;
-    }
+  @Autowired
+  public UserFinancesController(UserFinancesService userFinancesService) {
+    this.userFinancesService = userFinancesService;
+  }
 
-    @RequestMapping(value = "finances", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public UserFinances getUserFinances(@RequestBody UserCredentialDto userCredential) {
-        log.info("Receive request with user credential. Login: '" + userCredential.getLogin() + "', password: '" + userCredential.getPassword() + "'");
-        return userFinancesService.getUserFinances(userCredential.getLogin(), userCredential.getPassword());
-    }
-
+  @RequestMapping(value = "finances", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+  public UserFinances getUserFinances(@RequestBody UserCredentialDto userCredential) {
+    log.info("Receive request with user credential. Login: '" + userCredential.getLogin() + "', password: '" + userCredential.getPassword() + "'");
+    return userFinancesService.getUserFinances(userCredential.getLogin(), userCredential.getPassword());
+  }
+  
 }

@@ -1,9 +1,12 @@
 package pro.devlib.exception;
 
-import static pro.devlib.util.Constants.EXECUTE_REQUEST_EXCEPTION_MESSAGE;
 
 public class ExecuteRequestException extends RuntimeException {
-    public ExecuteRequestException(Throwable cause) {
+
+  private final static String EXECUTE_REQUEST_EXCEPTION_MESSAGE = "Exception during executing request.";
+
+  public ExecuteRequestException(Throwable cause) {
         super(EXECUTE_REQUEST_EXCEPTION_MESSAGE, cause);
     }
+
 }

@@ -11,8 +11,10 @@ import java.util.List;
 @Builder
 @Data
 public class DesktopInfoDto {
-    private String rndParameter;
-    private Amount sumAmount;
-    private List<Account> accounts;
-    private List<Card> cards;
+
+  private String rndParameter;
+  private Amount sumAmount;
+  private List<Account> accounts;
+  private List<Card> cards;
+
 }

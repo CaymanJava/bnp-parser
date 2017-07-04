@@ -8,8 +8,10 @@ import java.util.List;
 @Builder
 @Data
 public class Account {
-    private String name;
-    private String number;
-    private Amount balance;
-    private List<Transaction> transactions;
+
+  private String name;
+  private String number;
+  private Amount balance;
+  private List<Transaction> transactions;
+
 }

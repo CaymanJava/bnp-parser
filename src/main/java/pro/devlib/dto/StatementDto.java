@@ -6,6 +6,8 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class StatementDto {
-    private String systemDate;
-    private int templatesIdSize;
+
+  private String systemDate;
+  private int templatesIdSize;
+
 }

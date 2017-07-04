@@ -6,7 +6,7 @@
 
     <groupId>bnp-parser</groupId>
     <artifactId>bnp-parser</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 
     <name>bnp-parser</name>
     <description>bnp-parser</description>
@@ -27,6 +27,7 @@
         <!--APACHE-->
         <apache.httpclient.version>4.5.3</apache.httpclient.version>
         <apache.commons.io>2.5</apache.commons.io>
+        <commons.codec.version>1.9</commons.codec.version>
 
         <!--JSOUP-->
         <jsoup.version>1.10.2</jsoup.version>
@@ -85,7 +86,11 @@
             <artifactId>commons-io</artifactId>
             <version>${apache.commons.io}</version>
         </dependency>
-
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
+        </dependency>
 
         <!--JSOUP-->
         <dependency>

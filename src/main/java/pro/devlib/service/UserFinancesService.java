@@ -17,42 +17,42 @@ import java.util.Map;
 @Slf4j
 public class UserFinancesService {
 
-    private final StartPageService startPageService;
-    private final LoginService loginService;
-    private final PasswordService passwordService;
-    private final DesktopService desktopService;
-    private final TransactionService transactionService;
-    private final CookieHandler cookieHandler;
+  private final StartPageService startPageService;
+  private final LoginService loginService;
+  private final PasswordService passwordService;
+  private final DesktopService desktopService;
+  private final TransactionService transactionService;
+  private final CookieHandler cookieHandler;
 
-    @Autowired
-    public UserFinancesService(StartPageService startPageService, LoginService loginService,
-                               PasswordService passwordService, DesktopService desktopService,
-                               TransactionService transactionService, CookieHandler cookieHandler) {
-        this.startPageService = startPageService;
-        this.loginService = loginService;
-        this.passwordService = passwordService;
-        this.desktopService = desktopService;
-        this.transactionService = transactionService;
-        this.cookieHandler = cookieHandler;
-    }
+  @Autowired
+  public UserFinancesService(StartPageService startPageService, LoginService loginService,
+                             PasswordService passwordService, DesktopService desktopService,
+                             TransactionService transactionService, CookieHandler cookieHandler) {
+    this.startPageService = startPageService;
+    this.loginService = loginService;
+    this.passwordService = passwordService;
+    this.desktopService = desktopService;
+    this.transactionService = transactionService;
+    this.cookieHandler = cookieHandler;
+  }
 
-    public UserFinances getUserFinances(String login, String password) {
-        Map<String, String> parametersFromStartPage = startPageService.getParametersFromStartPage();
-        LoginResponseDto loginResponseDto = loginService.login(parametersFromStartPage, login);
-        passwordService.providePassword(loginResponseDto, login, password);
-        DesktopInfoDto desktopInformation = desktopService.getDesktopInformation();
-        transactionService.setTransactionsToAccounts(desktopInformation);
-        cookieHandler.clear();
-        return convertDesktopInfoToUserFinances(desktopInformation);
-    }
+  public UserFinances getUserFinances(String login, String password) {
+    Map<String, String> parametersFromStartPage = startPageService.getParametersFromStartPage();
+    LoginResponseDto loginResponseDto = loginService.login(parametersFromStartPage, login);
+    passwordService.providePassword(loginResponseDto, login, password);
+    DesktopInfoDto desktopInformation = desktopService.getDesktopInformation();
+    transactionService.setTransactionsToAccounts(desktopInformation);
+    cookieHandler.clear();
+    return convertDesktopInfoToUserFinances(desktopInformation);
+  }
 
-    private UserFinances convertDesktopInfoToUserFinances(DesktopInfoDto desktopInformation) {
-        return UserFinances
-                .builder()
-                .sumAmount(desktopInformation.getSumAmount())
-                .accounts(desktopInformation.getAccounts())
-                .cards(desktopInformation.getCards())
-                .build();
-    }
+  private UserFinances convertDesktopInfoToUserFinances(DesktopInfoDto desktopInformation) {
+    return UserFinances
+            .builder()
+            .sumAmount(desktopInformation.getSumAmount())
+            .accounts(desktopInformation.getAccounts())
+            .cards(desktopInformation.getCards())
+            .build();
+  }
 
 }

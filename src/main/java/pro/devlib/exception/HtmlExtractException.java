@@ -1,15 +1,16 @@
 package pro.devlib.exception;
 
 
-import static pro.devlib.util.Constants.HTML_EXTRACT_EXCEPTION_MESSAGE;
-
 public class HtmlExtractException extends RuntimeException {
 
-    public HtmlExtractException(Throwable cause) {
-        this(HTML_EXTRACT_EXCEPTION_MESSAGE, cause);
-    }
+  private final static String HTML_EXTRACT_EXCEPTION_MESSAGE = "Exception during extract HTML from response.";
 
-    private HtmlExtractException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public HtmlExtractException(Throwable cause) {
+    this(HTML_EXTRACT_EXCEPTION_MESSAGE, cause);
+  }
+
+  private HtmlExtractException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
 }

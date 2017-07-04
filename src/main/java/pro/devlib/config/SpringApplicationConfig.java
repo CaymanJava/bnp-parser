@@ -7,19 +7,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-
 @SpringBootApplication
-@ComponentScan(value={"pro.devlib.parser.**", "pro.devlib.http.**", "pro.devlib.service.**", "pro.devlib.web.**"})
+@ComponentScan(value = {"pro.devlib.parser.**", "pro.devlib.http.**", "pro.devlib.service.**", "pro.devlib.web.**"})
 public class SpringApplicationConfig {
 
-    public static void main(String[] args) throws Exception{
-        SpringApplication.run(SpringApplicationConfig.class, args);
-    }
+  public static void main(String[] args) throws Exception {
+    SpringApplication.run(SpringApplicationConfig.class, args);
+  }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        PropertySourcesPlaceholderConfigurer properties = new PropertySourcesPlaceholderConfigurer();
-        properties.setIgnoreResourceNotFound(false);
-        return properties;
-    }
+  @Bean
+  public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+    PropertySourcesPlaceholderConfigurer properties = new PropertySourcesPlaceholderConfigurer();
+    properties.setIgnoreResourceNotFound(false);
+    return properties;
+  }
+
 }

@@ -1,20 +1,17 @@
 package pro.devlib.model;
 
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-@Data
-@EqualsAndHashCode
-public class ZeroAmount extends Amount{
-    private final double value = 0;
-    private final String currency = "PLN";
+public class ZeroAmount extends Amount {
 
-    public ZeroAmount() {
-        super();
-    }
+  @Getter
+  private final double value = 0;
+  @Getter
+  private final String currency = "PLN";
 
-    public ZeroAmount(double value, String currency) {
-        super(0, "PLN");
-    }
+  public ZeroAmount() {
+    super();
+  }
+
 }

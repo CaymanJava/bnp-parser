@@ -16,26 +16,26 @@ import static junit.framework.TestCase.assertTrue;
 @SpringBootTest(classes = {SpringApplicationConfig.class})
 public class UserFinancesServiceTest {
 
-    // To run this test fill in login and password.
-    // Make sure that user has accounts, cards and every account has at least one transaction.
+  // To run this test fill in login and password.
+  // Make sure that user has accounts, cards and every account has at least one transaction.
 
-    @Autowired
-    private UserFinancesService userFinancesService;
-    private String login = "";
-    private String password = "";
+  @Autowired
+  private UserFinancesService userFinancesService;
 
-    @Test
-    @Ignore
-    public void getUserFinances() throws Exception {
-        UserFinances userFinances = userFinancesService.getUserFinances(login, password);
-        assertTrue(userFinances != null);
-        assertTrue(userFinances.getAccounts() != null);
-        assertTrue(userFinances.getAccounts().size() > 0);
-        assertTrue(userFinances.getCards().size() > 0);
+  @Test
+  @Ignore
+  public void getUserFinances() throws Exception {
+    String login = "";
+    String password = "";
 
-        for (Account account : userFinances.getAccounts()) {
-            assertTrue(account.getTransactions().size() > 0);
-        }
+    UserFinances userFinances = userFinancesService.getUserFinances(login, password);
+    assertTrue(userFinances != null);
+    assertTrue(userFinances.getAccounts() != null);
+    assertTrue(userFinances.getAccounts().size() > 0);
+    assertTrue(userFinances.getCards().size() > 0);
+
+    for (Account account : userFinances.getAccounts()) {
+      assertTrue(account.getTransactions().size() > 0);
     }
-
+  }
 }

@@ -7,5 +7,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class ExceptionDto {
-    private String exception;
+
+  private String exception;
+
 }

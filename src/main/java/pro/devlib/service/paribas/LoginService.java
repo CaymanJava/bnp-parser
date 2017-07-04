@@ -16,30 +16,31 @@ import java.util.Map;
 @Slf4j
 public class LoginService {
 
-    private final String loginUrl;
-    private final String loginReferer;
-    private final String ssoUrl;
-    private final RequestExecutor requestExecutor;
-    private final LoginPageParser loginPageParser;
+  private final String loginUrl;
+  private final String loginReferer;
+  private final String ssoUrl;
+  private final RequestExecutor requestExecutor;
+  private final LoginPageParser loginPageParser;
 
-    @Autowired
-    public LoginService(@Value("${login.url}") String loginUrl,
-                        @Value("${login.referer}") String loginReferer,
-                        @Value("${sso.url}") String ssoUrl,
-                        RequestExecutor requestExecutor,
-                        LoginPageParser loginPageParser) {
-        this.loginUrl = loginUrl;
-        this.loginReferer = loginReferer;
-        this.ssoUrl = ssoUrl;
-        this.requestExecutor = requestExecutor;
-        this.loginPageParser = loginPageParser;
-    }
+  @Autowired
+  public LoginService(@Value("${login.url}") String loginUrl,
+                      @Value("${login.referer}") String loginReferer,
+                      @Value("${sso.url}") String ssoUrl,
+                      RequestExecutor requestExecutor,
+                      LoginPageParser loginPageParser) {
+    this.loginUrl = loginUrl;
+    this.loginReferer = loginReferer;
+    this.ssoUrl = ssoUrl;
+    this.requestExecutor = requestExecutor;
+    this.loginPageParser = loginPageParser;
+  }
 
-    public LoginResponseDto login(Map<String, String> parameters, String login) {
-        log.info("Try to login on website with login: " + login);
-        parameters.put("p_alias", login);
-        requestExecutor.executePostRequest(loginUrl, loginReferer, parameters);
-        String htmlFromSsoRequest = requestExecutor.executeGetRequest(ssoUrl, loginUrl);
-        return loginPageParser.parseLoginPage(htmlFromSsoRequest);
-    }
+  public LoginResponseDto login(Map<String, String> parameters, String login) {
+    log.info("Try to login on website with login: " + login);
+    parameters.put("p_alias", login);
+    requestExecutor.executePostRequest(loginUrl, loginReferer, parameters);
+    String htmlFromSsoRequest = requestExecutor.executeGetRequest(ssoUrl, loginUrl);
+    return loginPageParser.parseLoginPage(htmlFromSsoRequest);
+  }
+
 }

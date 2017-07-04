@@ -9,26 +9,26 @@ import pro.devlib.dto.DesktopInfoDto;
 import pro.devlib.parser.DesktopInformationParser;
 import pro.devlib.http.RequestExecutor;
 
-import static pro.devlib.util.Constants.EMPTY;
-
 @Service
 @Scope("session")
 @Slf4j
 public class DesktopService {
-    private final String desktopUrl;
-    private final RequestExecutor requestExecutor;
-    private final DesktopInformationParser desktopInformationParser;
 
-    @Autowired
-    public DesktopService(@Value("${desktop.url}") String desktopUrl,
-                          RequestExecutor requestExecutor, DesktopInformationParser desktopInformationParser) {
-        this.desktopUrl = desktopUrl;
-        this.requestExecutor = requestExecutor;
-        this.desktopInformationParser = desktopInformationParser;
-    }
+  private final String desktopUrl;
+  private final RequestExecutor requestExecutor;
+  private final DesktopInformationParser desktopInformationParser;
 
-    public DesktopInfoDto getDesktopInformation() {
-        String desktopHtml = requestExecutor.executeGetRequest(desktopUrl, EMPTY);
-        return desktopInformationParser.parseDesktopHtml(desktopHtml);
-    }
+  @Autowired
+  public DesktopService(@Value("${desktop.url}") String desktopUrl,
+                        RequestExecutor requestExecutor, DesktopInformationParser desktopInformationParser) {
+    this.desktopUrl = desktopUrl;
+    this.requestExecutor = requestExecutor;
+    this.desktopInformationParser = desktopInformationParser;
+  }
+
+  public DesktopInfoDto getDesktopInformation() {
+    String desktopHtml = requestExecutor.executeGetRequest(desktopUrl, "");
+    return desktopInformationParser.parseDesktopHtml(desktopHtml);
+  }
+
 }
