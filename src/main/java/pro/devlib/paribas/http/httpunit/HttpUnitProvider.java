@@ -2,7 +2,6 @@ package pro.devlib.paribas.http.httpunit;
 
 
 import com.meterware.httpunit.*;
-import com.meterware.httpunit.cookies.CookieProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.xml.sax.SAXException;
 import pro.devlib.paribas.http.HttpProvider;
@@ -10,6 +9,8 @@ import pro.devlib.paribas.http.HttpProvider;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
+
+import static pro.devlib.paribas.http.httpunit.WebConversationFactory.createWebConversation;
 
 @Slf4j
 public class HttpUnitProvider extends HttpProvider {
@@ -51,21 +52,6 @@ public class HttpUnitProvider extends HttpProvider {
               String[] split = c.trim().split("=");
               webConversation.putCookie(split[0].trim(), split[1].trim());
             });
-  }
-
-  private static WebConversation createWebConversation() {
-    HttpUnitOptions.setDefaultCharacterSet("UTF8");
-    HttpUnitOptions.setScriptingEnabled(false);
-    CookieProperties.setDomainMatchingStrict(false);
-
-    WebConversation agent = new WebConversation();
-
-    ClientProperties properties = agent.getClientProperties();
-    properties.setIframeSupported(false);
-    properties.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
-    properties.setAutoRefresh(false);
-
-    return agent;
   }
 
 }
