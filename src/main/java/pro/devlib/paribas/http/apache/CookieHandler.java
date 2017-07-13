@@ -1,4 +1,4 @@
-package pro.devlib.paribas.http;
+package pro.devlib.paribas.http.apache;
 
 
 import org.apache.http.cookie.Cookie;
@@ -30,7 +30,7 @@ public class CookieHandler {
     return result.toString();
   }
 
-  public void clear() {
+  void clear() {
     cookies.clear();
   }
 

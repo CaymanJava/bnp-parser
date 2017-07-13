@@ -1,9 +1,10 @@
 package pro.devlib.paribas.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.xml.sax.SAXException;
 import pro.devlib.paribas.dto.DesktopInfoDto;
+import pro.devlib.paribas.http.HttpProvider;
 import pro.devlib.paribas.parser.DesktopInformationParser;
-import pro.devlib.paribas.http.RequestExecutor;
 
 import java.io.IOException;
 
@@ -11,16 +12,16 @@ import java.io.IOException;
 class DesktopService {
 
   private final static String DESKTOP_URL = "https://planet.bgzbnpparibas.pl/retail/do/desktop";
-  private final RequestExecutor requestExecutor;
+  private final HttpProvider httpProvider;
   private final DesktopInformationParser desktopInformationParser;
 
-  DesktopService(RequestExecutor requestExecutor) {
-    this.requestExecutor = requestExecutor;
+  DesktopService(HttpProvider httpProvider) {
+    this.httpProvider = httpProvider;
     this.desktopInformationParser = new DesktopInformationParser();
   }
 
-  DesktopInfoDto getDesktopInformation() throws IOException {
-    String desktopHtml = requestExecutor.executeGetRequest(DESKTOP_URL, "");
+  DesktopInfoDto getDesktopInformation() throws IOException, SAXException {
+    String desktopHtml = httpProvider.executeGetRequest(DESKTOP_URL, "");
     return desktopInformationParser.parseDesktopHtml(desktopHtml);
   }
 

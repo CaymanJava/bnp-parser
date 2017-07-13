@@ -1,4 +1,4 @@
-package pro.devlib.paribas.http;
+package pro.devlib.paribas.http.apache;
 
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.cookie.BasicClientCookie;

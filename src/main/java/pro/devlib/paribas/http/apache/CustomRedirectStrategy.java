@@ -1,4 +1,4 @@
-package pro.devlib.paribas.http;
+package pro.devlib.paribas.http.apache;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpRequest;

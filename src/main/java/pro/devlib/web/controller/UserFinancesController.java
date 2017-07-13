@@ -18,6 +18,8 @@ public class UserFinancesController {
   public UserFinances getUserFinances(@RequestBody UserCredentialsDto userCredentials) {
     log.info("Receive request with user credentials.");
     BnpParibasService bnpParibasService = new BnpParibasService(userCredentials.getLogin(), userCredentials.getPassword());
+    bnpParibasService.setUseHttpUnit(userCredentials.isUseHttpUnit());
+    bnpParibasService.setMonthsToParse(userCredentials.getMonthsToParse());
     return bnpParibasService.execute();
   }
   

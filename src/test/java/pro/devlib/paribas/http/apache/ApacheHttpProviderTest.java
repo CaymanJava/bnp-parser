@@ -1,4 +1,4 @@
-package pro.devlib.paribas.http;
+package pro.devlib.paribas.http.apache;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,24 +8,24 @@ import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class RequestExecutorTest {
+public class ApacheHttpProviderTest {
 
   //This test will work only when the page "http://devlib.pro" is accessible.
 
   private CookieHandler cookieHandler;
-  private RequestExecutor requestExecutor;
+  private ApacheHttpProvider apacheHttpProvider;
 
   @Before
   public void init() {
     this.cookieHandler = new CookieHandler();
-    this.requestExecutor = new RequestExecutor(cookieHandler);
+    this.apacheHttpProvider = new ApacheHttpProvider(cookieHandler);
   }
 
   @Test
   public void executeGetRequest() throws Exception {
     cookieHandler.clear();
     String urlForGetRequest = "http://devlib.pro/index";
-    String html = requestExecutor.executeGetRequest(urlForGetRequest, "");
+    String html = apacheHttpProvider.executeGetRequest(urlForGetRequest, "");
     assertTrue(html.contains("<title>DevLib. The Best Choice on the Web.</title>"));
     assertTrue(html.contains("<a href=\"/\" id=\"main_page\">"));
     assertTrue(html.contains("<a href=\"publishers\" id=\"publishers_page\">"));
@@ -41,7 +41,7 @@ public class RequestExecutorTest {
     String keyword = "java";
     params.put("keyword", keyword);
     String urlForPostRequest = "http://devlib.pro/search";
-    String html = requestExecutor.executePostRequest(urlForPostRequest, "", params);
+    String html = apacheHttpProvider.executePostRequest(urlForPostRequest, "", params);
     assertTrue(html.contains("<div class=\"product_sort\">"));
     assertTrue(html.contains("<ul class=\"product_view\">"));
     assertTrue(html.contains("<form id=\"more_book_div\" class=\"product_compare button\">"));

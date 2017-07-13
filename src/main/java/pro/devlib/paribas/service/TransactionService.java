@@ -2,9 +2,10 @@ package pro.devlib.paribas.service;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.xml.sax.SAXException;
 import pro.devlib.paribas.dto.DesktopInfoDto;
 import pro.devlib.paribas.dto.StatementDto;
-import pro.devlib.paribas.http.RequestExecutor;
+import pro.devlib.paribas.http.HttpProvider;
 import pro.devlib.paribas.model.Account;
 import pro.devlib.paribas.model.Transaction;
 import pro.devlib.paribas.parser.TransactionParser;
@@ -19,30 +20,31 @@ class TransactionService {
   private final static String DESKTOP_REFERER = "https://planet.bgzbnpparibas.pl/retail/do/desktop?open=true&param=";
   private final static String STATEMENT_URL_WITH_PARAMS = "https://planet.bgzbnpparibas.pl/retail/do/statementList?open=true&param=";
   private final static String STATEMENT_URL = "https://planet.bgzbnpparibas.pl/retail/do/statementList";
-  private final RequestExecutor requestExecutor;
+  private final HttpProvider httpProvider;
   private final TransactionParser transactionParser;
 
-  TransactionService(RequestExecutor requestExecutor) {
-    this.requestExecutor = requestExecutor;
+  TransactionService(HttpProvider httpProvider) {
+    this.httpProvider = httpProvider;
     this.transactionParser = new TransactionParser();
   }
 
-  void setTransactionsToAccounts(DesktopInfoDto desktopInformation) throws IOException {
+  void setTransactionsToAccounts(DesktopInfoDto desktopInformation, int monthsToParse) throws IOException, SAXException {
     List<Account> accounts = desktopInformation.getAccounts();
     for (int accountNumber = 0; accountNumber < accounts.size(); accountNumber++) {
-      List<Transaction> accountTransactions = getAccountTransactions(accountNumber, desktopInformation.getRndParameter());
+      List<Transaction> accountTransactions = getAccountTransactions(accountNumber, desktopInformation.getRndParameter(), monthsToParse);
       accounts.get(accountNumber).setTransactions(accountTransactions);
     }
   }
 
-  private List<Transaction> getAccountTransactions(int accountNumber, String rndParameter) throws IOException {
+  private List<Transaction> getAccountTransactions(int accountNumber, String rndParameter, int monthsToParse) throws IOException, SAXException {
     Map<String, String> paramsForDesktopRequest = createParamsForDesktopRequest(accountNumber, rndParameter);
-    requestExecutor.executePostRequest(DESKTOP_URL, DESKTOP_REFERER, paramsForDesktopRequest);
-    String statementWithParamsHtml = requestExecutor.executeGetRequest(STATEMENT_URL_WITH_PARAMS, DESKTOP_URL);
+    httpProvider.executePostRequest(DESKTOP_URL, DESKTOP_REFERER, paramsForDesktopRequest);
+    String statementWithParamsHtml = httpProvider.executeGetRequest(STATEMENT_URL_WITH_PARAMS, DESKTOP_URL);
     StatementDto statementDto = transactionParser.parseSysDateAndTemplatesIdSize(statementWithParamsHtml);
+    monthsToParse = statementDto.getTemplatesIdSize() < monthsToParse ? statementDto.getTemplatesIdSize() : monthsToParse;
 
     List<Transaction> transactions = new ArrayList<>();
-    for (int templateId = 0; templateId < statementDto.getTemplatesIdSize(); templateId++) {
+    for (int templateId = 0; templateId < monthsToParse; templateId++) {
       transactions.addAll(getTransactionsFromTemplate(statementDto, templateId));
     }
     return transactions;
@@ -51,7 +53,7 @@ class TransactionService {
   private List<Transaction> getTransactionsFromTemplate(StatementDto statementDto, int templateId) {
     try {
       Map<String, String> paramsForStatementRequest = createParamsForStatementRequest(statementDto.getSystemDate(), templateId);
-      String statementHtml = requestExecutor.executePostRequest(STATEMENT_URL, STATEMENT_URL, paramsForStatementRequest);
+      String statementHtml = httpProvider.executePostRequest(STATEMENT_URL, STATEMENT_URL, paramsForStatementRequest);
       return transactionParser.parseTransactions(statementHtml);
     } catch (Exception e) {
       log.warn("Can't execute request to statement");

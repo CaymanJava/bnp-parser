@@ -6,7 +6,7 @@
 
     <groupId>bnp-parser</groupId>
     <artifactId>bnp-parser</artifactId>
-    <version>0.1.2</version>
+    <version>0.2.0</version>
 
     <name>bnp-parser</name>
     <description>bnp-parser</description>
@@ -31,6 +31,10 @@
 
         <!--JSOUP-->
         <jsoup.version>1.10.2</jsoup.version>
+
+        <nekohtml.version>1.9.22</nekohtml.version>
+        <rhino.js.version>1.7R1</rhino.js.version>
+        <flexjson.version>3.3</flexjson.version>
     </properties>
 
     <repositories>
@@ -92,12 +96,40 @@
             <version>${commons.codec.version}</version>
         </dependency>
 
-        <!--JSOUP-->
+        <!--JSON-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>${jsoup.version}</version>
         </dependency>
+
+
+        <!--HTTP-UNIT-->
+        <dependency>
+            <groupId>http.unit.custom</groupId>
+            <artifactId>http.unit.custom</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/httpunit.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+            <version>${nekohtml.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>rhino</groupId>
+            <artifactId>js</artifactId>
+            <version>${rhino.js.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.flexjson</groupId>
+            <artifactId>flexjson</artifactId>
+            <version>${flexjson.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

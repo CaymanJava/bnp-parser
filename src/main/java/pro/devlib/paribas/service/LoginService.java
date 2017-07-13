@@ -1,10 +1,11 @@
 package pro.devlib.paribas.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.xml.sax.SAXException;
 import pro.devlib.paribas.dto.LoginResponseDto;
 import pro.devlib.paribas.exception.BadCredentialsException;
+import pro.devlib.paribas.http.HttpProvider;
 import pro.devlib.paribas.parser.LoginPageParser;
-import pro.devlib.paribas.http.RequestExecutor;
 
 import java.io.IOException;
 import java.util.Map;
@@ -14,11 +15,11 @@ class LoginService {
 
   private final static String LOGIN_URL = "https://login.bgzbnpparibas.pl/login/Redirect";
   private final static String SSO_URL = "https://login.bgzbnpparibas.pl/sso";
-  private final RequestExecutor requestExecutor;
+  private final HttpProvider httpProvider;
   private final LoginPageParser loginPageParser;
 
-  LoginService(RequestExecutor requestExecutor) {
-    this.requestExecutor = requestExecutor;
+  LoginService(HttpProvider httpProvider) {
+    this.httpProvider = httpProvider;
     this.loginPageParser = new LoginPageParser();
   }
 
@@ -31,9 +32,9 @@ class LoginService {
 
   private String provideLogin(Map<String, String> parameters) {
     try {
-      requestExecutor.executePostRequest(LOGIN_URL, "", parameters);
-      return requestExecutor.executeGetRequest(SSO_URL, LOGIN_URL);
-    } catch (IOException e) {
+      httpProvider.executePostRequest(LOGIN_URL, "", parameters);
+      return httpProvider.executeGetRequest(SSO_URL, LOGIN_URL);
+    } catch (IOException | SAXException e) {
       throw new BadCredentialsException();
     }
   }
